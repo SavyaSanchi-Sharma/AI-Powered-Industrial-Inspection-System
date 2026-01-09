@@ -96,89 +96,103 @@ const Measurement = () => {
                 </div>
 
                 <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-lg p-6 flex flex-col overflow-y-auto">
+
+                    {/* Header */}
                     <h3 className="text-lg font-semibold text-slate-200 mb-6 flex items-center gap-2">
-                        <Ruler className="w-5 h-5 text-cyan-500" /> Manual Input
+                        <Ruler className="w-5 h-5 text-cyan-500" /> Measurement Logs
                     </h3>
 
-                    {/* Input Form */}
-                    <div className="space-y-4 mb-8">
-                        <div>
-                            <label className="block text-xs text-slate-500 mb-1 uppercase tracking-wider">Number of Measurements</label>
-                            <input
-                                type="number"
-                                min="1"
-                                max="10"
-                                value={measurementCount}
-                                onChange={handleCountChange}
-                                className="w-full bg-slate-800 border border-slate-700 rounded p-2 text-slate-200 focus:border-cyan-500 focus:outline-none transition-colors"
-                            />
-                        </div>
+                    <div className="space-y-4 flex-1">
 
-                        <div className="pt-4 border-t border-slate-800/50">
-                            <div className="grid grid-cols-3 gap-2 mb-2">
-                                <label className="text-[10px] text-slate-500 uppercase">Name</label>
-                                <label className="text-[10px] text-slate-500 uppercase">Value</label>
-                                <label className="text-[10px] text-slate-500 uppercase">Unit</label>
-                            </div>
-
-                            {measurements.map((measure, index) => (
-                                <div key={index} className="grid grid-cols-3 gap-2 mb-2">
-                                    <input
-                                        value={measure.name}
-                                        onChange={(e) => handleMeasurementChange(index, 'name', e.target.value)}
-                                        className="bg-slate-800 border border-slate-700 rounded p-2 text-sm text-slate-200 focus:border-cyan-500/50 outline-none"
-                                        placeholder="Name"
-                                    />
-                                    <input
-                                        value={measure.value}
-                                        onChange={(e) => handleMeasurementChange(index, 'value', e.target.value)}
-                                        className="bg-slate-800 border border-slate-700 rounded p-2 text-sm text-slate-200 focus:border-cyan-500/50 outline-none"
-                                        placeholder="0.00"
-                                    />
-                                    <input
-                                        value={measure.unit}
-                                        onChange={(e) => handleMeasurementChange(index, 'unit', e.target.value)}
-                                        className="bg-slate-800 border border-slate-700 rounded p-2 text-sm text-slate-200 focus:border-cyan-500/50 outline-none"
-                                        placeholder="mm"
-                                    />
-                                </div>
-                            ))}
-                        </div>
-
-                        <button className="w-full py-2 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/50 rounded text-sm transition-colors flex items-center justify-center gap-2">
-                            <Settings className="w-4 h-4" /> Update Configuration
-                        </button>
-                    </div>
-
-                    <h3 className="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
-                        <Settings className="w-5 h-5 text-slate-500" /> System Data
-                    </h3>
-
-                    <div className="space-y-1">
-                        <div className="flex justify-between p-3 border-b border-slate-800">
-                            <span className="text-slate-400">Object ID</span>
-                            <span className="text-slate-200 font-mono">#A7-22</span>
-                        </div>
-                        {measurements.map((m, i) => (
-                            <div key={i} className="flex justify-between p-3 border-b border-slate-800 even:bg-slate-800/20">
-                                <span className="text-slate-400">{m.name || '-'}</span>
-                                <span className="text-cyan-400 font-mono font-bold">
-                                    {m.value || '0.00'} {m.unit}
+                        {/* Input Configuration Card */}
+                        <div className="p-4 bg-slate-800/50 rounded border-l-4 border-cyan-500">
+                            <div className="flex justify-between items-start mb-4">
+                                <span className="text-cyan-400 font-bold text-sm">CONFIGURATION</span>
+                                <span className="text-slate-500 text-xs flex items-center gap-1">
+                                    <Settings className="w-3 h-3" /> Manual
                                 </span>
                             </div>
+
+                            <div className="space-y-3">
+                                <div>
+                                    <label className="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Count</label>
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        max="10"
+                                        value={measurementCount}
+                                        onChange={handleCountChange}
+                                        className="w-full bg-slate-900/50 border border-slate-700 rounded p-2 text-sm text-slate-200 focus:border-cyan-500/50 outline-none transition-colors"
+                                    />
+                                </div>
+
+                                <div className="space-y-2">
+                                    <div className="grid grid-cols-3 gap-2">
+                                        <label className="text-[10px] text-slate-500 uppercase">Label</label>
+                                        <label className="text-[10px] text-slate-500 uppercase">Value</label>
+                                        <label className="text-[10px] text-slate-500 uppercase">Unit</label>
+                                    </div>
+
+                                    {measurements.map((measure, index) => (
+                                        <div key={index} className="grid grid-cols-3 gap-2">
+                                            <input
+                                                value={measure.name}
+                                                onChange={(e) => handleMeasurementChange(index, 'name', e.target.value)}
+                                                className="bg-slate-900/50 border border-slate-700 rounded p-2 text-xs text-slate-300 focus:border-cyan-500/50 outline-none"
+                                                placeholder="Name"
+                                            />
+                                            <input
+                                                value={measure.value}
+                                                onChange={(e) => handleMeasurementChange(index, 'value', e.target.value)}
+                                                className="bg-slate-900/50 border border-slate-700 rounded p-2 text-xs text-cyan-400 font-mono focus:border-cyan-500/50 outline-none"
+                                                placeholder="0.00"
+                                            />
+                                            <input
+                                                value={measure.unit}
+                                                onChange={(e) => handleMeasurementChange(index, 'unit', e.target.value)}
+                                                className="bg-slate-900/50 border border-slate-700 rounded p-2 text-xs text-slate-400 focus:border-cyan-500/50 outline-none"
+                                                placeholder="mm"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Result/Log Cards */}
+                        {measurements.map((m, i) => (
+                            <div key={i} className="p-4 bg-slate-800/50 rounded border-l-4 border-green-500 animate-in fade-in slide-in-from-right-4 duration-500" style={{ animationDelay: `${i * 100}ms` }}>
+                                <div className="flex justify-between items-start mb-2">
+                                    <span className="text-green-400 font-bold text-sm">DETECTED</span>
+                                    <span className="text-slate-500 text-xs">ID: {i + 1}</span>
+                                </div>
+                                <h4 className="text-slate-200 font-medium">{m.name || 'Undefined Dimension'}</h4>
+                                <div className="mt-2 flex items-baseline justify-between">
+                                    <span className="text-2xl font-mono font-bold text-white tracking-tight">
+                                        {m.value || '0.00'} <span className="text-sm text-slate-500 font-sans font-normal">{m.unit}</span>
+                                    </span>
+                                    <div className="flex items-center gap-1 text-green-400 text-xs">
+                                        <Check className="w-3 h-3" /> Valid
+                                    </div>
+                                </div>
+                                {/* Confidence/Tolerance Bar */}
+                                <div className="mt-3 h-1 w-full bg-slate-700 rounded-full overflow-hidden">
+                                    <div className="h-full bg-green-500 w-full" style={{ width: '99%' }} />
+                                </div>
+                            </div>
                         ))}
+
                     </div>
 
-                    <div className="mt-8 p-4 bg-green-500/5 border border-green-500/20 rounded-lg text-center">
-                        <Check className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                        <div className="text-green-400 font-medium">WITHIN TOLERANCE</div>
-                        <div className="text-green-600/70 text-xs mt-1">QC PASSED</div>
-                    </div>
-
-                    <div className="mt-auto pt-4">
-                        <button className="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-sm transition-colors border border-slate-700">
-                            Export Report
-                        </button>
+                    <div className="mt-auto pt-6 border-t border-slate-800">
+                        <div className="flex justify-between text-sm mb-2">
+                            <span className="text-slate-400">Total Measurements</span>
+                            <span className="text-slate-200">{measurements.length}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                            <span className="text-slate-400">Calibration</span>
+                            <span className="text-cyan-400">±1mm</span>
+                        </div>
                     </div>
                 </div>
             </div>
