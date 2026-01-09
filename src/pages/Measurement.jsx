@@ -1,32 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Ruler, Check, Settings } from 'lucide-react';
+import { Ruler, Check } from 'lucide-react';
 
 const Measurement = () => {
-    const [measurementCount, setMeasurementCount] = React.useState(2);
-    const [measurements, setMeasurements] = React.useState([
+    // Simulated live data feed
+    const [measurements] = React.useState([
         { name: 'Width', value: '256.0', unit: 'mm' },
         { name: 'Height', value: '160.0', unit: 'mm' }
     ]);
-
-    const handleCountChange = (e) => {
-        const count = parseInt(e.target.value) || 0;
-        setMeasurementCount(count);
-
-        // Adjust array size
-        if (count > measurements.length) {
-            const newItems = Array(count - measurements.length).fill({ name: '', value: '', unit: 'mm' });
-            setMeasurements([...measurements, ...newItems]);
-        } else {
-            setMeasurements(measurements.slice(0, count));
-        }
-    };
-
-    const handleMeasurementChange = (index, field, value) => {
-        const newMeasurements = [...measurements];
-        newMeasurements[index] = { ...newMeasurements[index], [field]: value };
-        setMeasurements(newMeasurements);
-    };
 
     return (
         <div className="h-screen flex flex-col p-6 gap-6 w-full max-w-[1600px] mx-auto">
@@ -103,61 +84,6 @@ const Measurement = () => {
                     </h3>
 
                     <div className="space-y-4 flex-1">
-
-                        {/* Input Configuration Card */}
-                        <div className="p-4 bg-slate-800/50 rounded border-l-4 border-cyan-500">
-                            <div className="flex justify-between items-start mb-4">
-                                <span className="text-cyan-400 font-bold text-sm">CONFIGURATION</span>
-                                <span className="text-slate-500 text-xs flex items-center gap-1">
-                                    <Settings className="w-3 h-3" /> Manual
-                                </span>
-                            </div>
-
-                            <div className="space-y-3">
-                                <div>
-                                    <label className="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Count</label>
-                                    <input
-                                        type="number"
-                                        min="1"
-                                        max="10"
-                                        value={measurementCount}
-                                        onChange={handleCountChange}
-                                        className="w-full bg-slate-900/50 border border-slate-700 rounded p-2 text-sm text-slate-200 focus:border-cyan-500/50 outline-none transition-colors"
-                                    />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <div className="grid grid-cols-3 gap-2">
-                                        <label className="text-[10px] text-slate-500 uppercase">Label</label>
-                                        <label className="text-[10px] text-slate-500 uppercase">Value</label>
-                                        <label className="text-[10px] text-slate-500 uppercase">Unit</label>
-                                    </div>
-
-                                    {measurements.map((measure, index) => (
-                                        <div key={index} className="grid grid-cols-3 gap-2">
-                                            <input
-                                                value={measure.name}
-                                                onChange={(e) => handleMeasurementChange(index, 'name', e.target.value)}
-                                                className="bg-slate-900/50 border border-slate-700 rounded p-2 text-xs text-slate-300 focus:border-cyan-500/50 outline-none"
-                                                placeholder="Name"
-                                            />
-                                            <input
-                                                value={measure.value}
-                                                onChange={(e) => handleMeasurementChange(index, 'value', e.target.value)}
-                                                className="bg-slate-900/50 border border-slate-700 rounded p-2 text-xs text-cyan-400 font-mono focus:border-cyan-500/50 outline-none"
-                                                placeholder="0.00"
-                                            />
-                                            <input
-                                                value={measure.unit}
-                                                onChange={(e) => handleMeasurementChange(index, 'unit', e.target.value)}
-                                                className="bg-slate-900/50 border border-slate-700 rounded p-2 text-xs text-slate-400 focus:border-cyan-500/50 outline-none"
-                                                placeholder="mm"
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
 
                         {/* Result/Log Cards */}
                         {measurements.map((m, i) => (
