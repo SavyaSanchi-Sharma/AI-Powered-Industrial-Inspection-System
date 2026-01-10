@@ -79,9 +79,14 @@ const Measurement = () => {
                 <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-lg p-6 flex flex-col overflow-y-auto">
 
                     {/* Header */}
-                    <h3 className="text-lg font-semibold text-slate-200 mb-6 flex items-center gap-2">
-                        <Ruler className="w-5 h-5 text-cyan-500" /> Measurement Logs
-                    </h3>
+                    <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-lg font-semibold text-slate-200 flex items-center gap-2">
+                            <Ruler className="w-5 h-5 text-cyan-500" /> Measurement Logs
+                        </h3>
+                        <button className="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 text-xs border border-cyan-500/50 rounded transition-colors flex items-center gap-2">
+                            <Ruler className="w-3 h-3" /> Calibrate
+                        </button>
+                    </div>
 
                     <div className="space-y-4 flex-1">
 
@@ -111,13 +116,18 @@ const Measurement = () => {
                     </div>
 
                     <div className="mt-auto pt-6 border-t border-slate-800">
-                        <div className="flex justify-between text-sm mb-2">
+                        <div className="flex justify-between text-sm mb-4">
                             <span className="text-slate-400">Total Measurements</span>
                             <span className="text-slate-200">{measurements.length}</span>
                         </div>
-                        <div className="flex justify-between text-sm">
-                            <span className="text-slate-400">Calibration</span>
-                            <span className="text-cyan-400">±1mm</span>
+
+                        <div className="grid grid-cols-2 gap-3">
+                            <button className="py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded text-xs transition-colors flex items-center justify-center gap-2">
+                                Export CSV
+                            </button>
+                            <button className="py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded text-xs transition-colors flex items-center justify-center gap-2">
+                                Export JSON
+                            </button>
                         </div>
                     </div>
                 </div>

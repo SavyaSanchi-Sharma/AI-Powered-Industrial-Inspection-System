@@ -99,9 +99,18 @@ const AnomalyDetection = () => {
                             <span className="text-slate-400">Processed Items</span>
                             <span className="text-slate-200">1,248</span>
                         </div>
-                        <div className="flex justify-between text-sm">
+                        <div className="flex justify-between text-sm mb-4">
                             <span className="text-slate-400">Defect Rate</span>
                             <span className="text-red-400">1.2%</span>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3">
+                            <button className="py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded text-xs transition-colors flex items-center justify-center gap-2">
+                                Export CSV
+                            </button>
+                            <button className="py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded text-xs transition-colors flex items-center justify-center gap-2">
+                                Export JSON
+                            </button>
                         </div>
                     </div>
                 </div>
