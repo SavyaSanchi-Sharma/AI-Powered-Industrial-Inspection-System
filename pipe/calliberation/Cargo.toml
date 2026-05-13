@@ -6,5 +6,5 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.100"
 detect = { version = "0.1.0", path = "../detect" }
-opencv = "0.98.1"
+opencv = "0.98.2"
 pipe_core = { version = "0.1.0", path = "../pipe_core" }

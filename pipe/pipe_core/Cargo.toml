@@ -5,5 +5,5 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.100"
-opencv = "0.98.1"
+opencv = "0.98.2"
 thiserror = "2.0.17"

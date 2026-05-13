@@ -1,0 +1,564 @@
+{
+  "metadata": {
+    "device": "cuda",
+    "timestamp": "2026-04-23T04:42:40",
+    "pytorch_version": "2.11.0+cu130"
+  },
+  "anomaly_detection": {
+    "method": "PatchCore-lite (ResNet18-Layer3, k=5 NN, CoreSet)",
+    "per_category": [
+      {
+        "category": "bottle",
+        "dataset_path": "/home/guy_who_likes_to_code/github/AI-Powered-Industrial-Inspection-System/dataset/mvtec/bottle",
+        "image_level": {
+          "auroc": 82.62,
+          "average_precision": 93.39,
+          "best_f1": 88.72,
+          "precision_at_best_f1": 84.29,
+          "recall_at_best_f1": 93.65,
+          "accuracy_at_best_f1": 81.93,
+          "optimal_threshold": 3.089934,
+          "num_normal": 20,
+          "num_defect": 63,
+          "normal_score_mean": 3.206438,
+          "normal_score_std": 0.195922,
+          "defect_score_mean": 3.530556,
+          "defect_score_std": 0.287003
+        },
+        "pixel_level": {
+          "auroc": 84.69,
+          "average_precision": 33.25,
+          "best_f1": 37.93,
+          "precision_at_best_f1": 31.47,
+          "recall_at_best_f1": 47.73,
+          "aupro_at_fpr30": 63.37,
+          "num_pixel_pairs": 51030000
+        },
+        "latency": {
+          "mean_ms": 18.01,
+          "std_ms": 12.56,
+          "p50_ms": 16.15,
+          "p95_ms": 19.03,
+          "p99_ms": 40.97,
+          "throughput_fps": 55.51,
+          "num_images": 83,
+          "device": "cuda"
+        }
+      },
+      {
+        "category": "cable",
+        "dataset_path": "/home/guy_who_likes_to_code/github/AI-Powered-Industrial-Inspection-System/dataset/mvtec/cable",
+        "image_level": {
+          "auroc": 61.43,
+          "average_precision": 69.61,
+          "best_f1": 77.06,
+          "precision_at_best_f1": 66.67,
+          "recall_at_best_f1": 91.3,
+          "accuracy_at_best_f1": 66.67,
+          "optimal_threshold": 3.101184,
+          "num_normal": 58,
+          "num_defect": 92,
+          "normal_score_mean": 3.258211,
+          "normal_score_std": 0.210721,
+          "defect_score_mean": 3.345456,
+          "defect_score_std": 0.289727
+        },
+        "pixel_level": {
+          "auroc": 92.06,
+          "average_precision": 34.45,
+          "best_f1": 42.75,
+          "precision_at_best_f1": 34.21,
+          "recall_at_best_f1": 56.97,
+          "aupro_at_fpr30": 72.06,
+          "num_pixel_pairs": 96468992
+        },
+        "latency": {
+          "mean_ms": 29.04,
+          "std_ms": 1.44,
+          "p50_ms": 28.97,
+          "p95_ms": 30.4,
+          "p99_ms": 33.21,
+          "throughput_fps": 34.44,
+          "num_images": 150,
+          "device": "cuda"
+        }
+      },
+      {
+        "category": "capsule",
+        "dataset_path": "/home/guy_who_likes_to_code/github/AI-Powered-Industrial-Inspection-System/dataset/mvtec/capsule",
+        "image_level": {
+          "auroc": 38.13,
+          "average_precision": 75.79,
+          "best_f1": 90.46,
+          "precision_at_best_f1": 82.58,
+          "recall_at_best_f1": 100.0,
+          "accuracy_at_best_f1": 82.58,
+          "optimal_threshold": 3.391981,
+          "num_normal": 23,
+          "num_defect": 109,
+          "normal_score_mean": 4.186545,
+          "normal_score_std": 0.243061,
+          "defect_score_mean": 4.076669,
+          "defect_score_std": 0.246504
+        },
+        "pixel_level": {
+          "auroc": 89.93,
+          "average_precision": 7.0,
+          "best_f1": 13.29,
+          "precision_at_best_f1": 8.52,
+          "recall_at_best_f1": 30.18,
+          "aupro_at_fpr30": 70.02,
+          "num_pixel_pairs": 109000000
+        },
+        "latency": {
+          "mean_ms": 27.93,
+          "std_ms": 1.53,
+          "p50_ms": 27.68,
+          "p95_ms": 29.58,
+          "p99_ms": 32.37,
+          "throughput_fps": 35.8,
+          "num_images": 132,
+          "device": "cuda"
+        }
+      },
+      {
+        "category": "grid",
+        "dataset_path": "/home/guy_who_likes_to_code/github/AI-Powered-Industrial-Inspection-System/dataset/mvtec/grid",
+        "image_level": {
+          "auroc": 55.64,
+          "average_precision": 75.64,
+          "best_f1": 85.5,
+          "precision_at_best_f1": 75.68,
+          "recall_at_best_f1": 98.25,
+          "accuracy_at_best_f1": 75.64,
+          "optimal_threshold": 3.270536,
+          "num_normal": 21,
+          "num_defect": 57,
+          "normal_score_mean": 3.514627,
+          "normal_score_std": 0.189925,
+          "defect_score_mean": 3.550254,
+          "defect_score_std": 0.158622
+        },
+        "pixel_level": {
+          "auroc": 29.07,
+          "average_precision": 0.6,
+          "best_f1": 1.87,
+          "precision_at_best_f1": 0.95,
+          "recall_at_best_f1": 100.0,
+          "aupro_at_fpr30": 4.78,
+          "num_pixel_pairs": 59768832
+        },
+        "latency": {
+          "mean_ms": 13.52,
+          "std_ms": 2.1,
+          "p50_ms": 13.28,
+          "p95_ms": 14.23,
+          "p99_ms": 19.84,
+          "throughput_fps": 73.98,
+          "num_images": 78,
+          "device": "cuda"
+        }
+      },
+      {
+        "category": "metal_nut",
+        "dataset_path": "/home/guy_who_likes_to_code/github/AI-Powered-Industrial-Inspection-System/dataset/mvtec/metal_nut",
+        "image_level": {
+          "auroc": 72.73,
+          "average_precision": 92.44,
+          "best_f1": 90.1,
+          "precision_at_best_f1": 83.49,
+          "recall_at_best_f1": 97.85,
+          "accuracy_at_best_f1": 82.61,
+          "optimal_threshold": 3.160347,
+          "num_normal": 22,
+          "num_defect": 93,
+          "normal_score_mean": 3.19777,
+          "normal_score_std": 0.030994,
+          "defect_score_mean": 3.286771,
+          "defect_score_std": 0.15482
+        },
+        "pixel_level": {
+          "auroc": 85.28,
+          "average_precision": 41.55,
+          "best_f1": 50.97,
+          "precision_at_best_f1": 38.41,
+          "recall_at_best_f1": 75.71,
+          "aupro_at_fpr30": 61.91,
+          "num_pixel_pairs": 45570000
+        },
+        "latency": {
+          "mean_ms": 16.19,
+          "std_ms": 2.17,
+          "p50_ms": 16.75,
+          "p95_ms": 18.16,
+          "p99_ms": 19.58,
+          "throughput_fps": 61.77,
+          "num_images": 115,
+          "device": "cuda"
+        }
+      },
+      {
+        "category": "wood",
+        "dataset_path": "/home/guy_who_likes_to_code/github/AI-Powered-Industrial-Inspection-System/dataset/mvtec/wood",
+        "image_level": {
+          "auroc": 78.86,
+          "average_precision": 92.85,
+          "best_f1": 87.41,
+          "precision_at_best_f1": 78.67,
+          "recall_at_best_f1": 98.33,
+          "accuracy_at_best_f1": 78.48,
+          "optimal_threshold": 2.931386,
+          "num_normal": 19,
+          "num_defect": 60,
+          "normal_score_mean": 3.09772,
+          "normal_score_std": 0.124445,
+          "defect_score_mean": 3.32418,
+          "defect_score_std": 0.255612
+        },
+        "pixel_level": {
+          "auroc": 62.7,
+          "average_precision": 8.98,
+          "best_f1": 15.34,
+          "precision_at_best_f1": 9.99,
+          "recall_at_best_f1": 33.0,
+          "aupro_at_fpr30": 44.17,
+          "num_pixel_pairs": 62914560
+        },
+        "latency": {
+          "mean_ms": 32.04,
+          "std_ms": 1.53,
+          "p50_ms": 31.87,
+          "p95_ms": 33.58,
+          "p99_ms": 36.61,
+          "throughput_fps": 31.21,
+          "num_images": 79,
+          "device": "cuda"
+        }
+      }
+    ]
+  },
+  "measurement": {
+    "module": "measurement_pipe",
+    "method": "Canny Edge Detection + Contour Analysis + Zhang Calibration",
+    "algorithm_details": {
+      "edge_detection": "Canny (low=80, high=160, kernel=3)",
+      "preprocessing": "Gaussian blur 5x5 -> Morphological closing 5x5x2 -> Dilation 5x5x1",
+      "contour_method": "findContours RETR_EXTERNAL + CHAIN_APPROX_SIMPLE",
+      "min_contour_area_px": 2000,
+      "calibration": "Zhang chessboard method (7x7, 25mm squares, 15 frames)",
+      "measurement_output": "rotated bounding rect (width_mm, height_mm, angle_deg)"
+    },
+    "edge_detection_metrics": {
+      "segmentation_iou_vs_otsu": {
+        "mean": 5.54,
+        "std": 6.0,
+        "min": 0.0,
+        "max": 21.13
+      },
+      "contour_detection": {
+        "mean_objects_per_image": 14.0,
+        "std": 28.44
+      }
+    },
+    "latency": {
+      "mean_ms": 1.98,
+      "std_ms": 2.26,
+      "throughput_fps": 504.07,
+      "num_images": 30
+    },
+    "sota_comparison": {
+      "our_method": "Classical Canny + Contour",
+      "limitations": "No learned edge detection, single fixed threshold pair, no sub-pixel refinement",
+      "sota_methods": {
+        "deep_caliper_2023": {
+          "method": "DeepCaliper",
+          "mae_um": 3.5,
+          "relative_error_pct": 0.05
+        },
+        "subpixel_cnn_2023": {
+          "method": "Sub-pixel Edge CNN",
+          "mae_um": 1.2,
+          "relative_error_pct": 0.3
+        },
+        "structured_light_dl_2024": {
+          "method": "Structured Light + DL",
+          "rmse_um": 8.0,
+          "relative_error_pct": 0.01
+        }
+      },
+      "assessment": "Classical pipeline suitable for coarse measurement; SOTA learned methods achieve 10-100x better precision"
+    }
+  },
+  "assembly_verification": {
+    "module": "assembly_verification_compare",
+    "method": "Hu Moment Shape Matching",
+    "algorithm_details": {
+      "shape_descriptor": "Hu Moment Invariants (7 moments, rotation/scale invariant)",
+      "matching_method": "cv2.matchShapes CONTOURS_MATCH_I1",
+      "area_ratio_threshold": 0.6,
+      "shape_match_threshold": 0.15,
+      "min_contour_area_px": 2000,
+      "brightness_adjustment": "scale=0.7, offset=-20"
+    },
+    "self_matching": {
+      "description": "reference image matched against itself (upper bound)",
+      "mean_match_rate": 100.0,
+      "std_match_rate": 0.0,
+      "mean_hu_distance": 0.0,
+      "num_pairs": 30
+    },
+    "cross_matching": {
+      "description": "reference matched against different category image (should fail)",
+      "mean_match_rate": 2.94,
+      "std_match_rate": 11.76,
+      "num_pairs": 30
+    },
+    "discriminative_metrics": {
+      "auroc": 100.0,
+      "f1": 97.14,
+      "precision": 94.44,
+      "recall": 100.0
+    },
+    "latency": {
+      "mean_ms": 19.81,
+      "std_ms": 7.42,
+      "throughput_fps": 50.49,
+      "num_evaluations": 60
+    },
+    "sota_comparison": {
+      "our_method": "Hu Moment Matching (classical)",
+      "sota_methods": {
+        "yolov8_finetuned_2023": {
+          "method": "YOLOv8-L fine-tuned",
+          "precision": 97.8,
+          "recall": 96.5,
+          "map50": 97.1
+        },
+        "rt_detr_2024": {
+          "method": "RT-DETR on MVTec LOCO",
+          "image_auroc": 95.2
+        },
+        "comad_2024": {
+          "method": "ComAD (component anomaly)",
+          "image_auroc": 96.8
+        },
+        "assemblynet_gnn_2023": {
+          "method": "AssemblyNet (GNN)",
+          "precision": 98.2,
+          "recall": 97.0,
+          "f1": 97.6
+        }
+      },
+      "assessment": "Classical Hu moment matching provides baseline assembly verification; SOTA learned methods (GNN, transformer-based) achieve 95-98% on complex logical anomalies"
+    }
+  },
+  "sota_comparison": {
+    "our_system": {
+      "method": "PatchCore-lite (ResNet18, Layer3, k=5 NN, CoreSet 5000)",
+      "backbone": "ResNet18 (ImageNet pretrained, frozen)",
+      "feature_dim": 256,
+      "feature_layer": "layer3",
+      "memory_bank_size": 333788,
+      "coreset_target": 5000,
+      "k_neighbors": 5,
+      "image_size": 224,
+      "image_auroc": {
+        "bottle": 82.62,
+        "cable": 61.43,
+        "capsule": 38.13,
+        "grid": 55.64,
+        "metal_nut": 72.73,
+        "wood": 78.86,
+        "mean": 64.9
+      },
+      "pixel_auroc": {
+        "bottle": 84.69,
+        "cable": 92.06,
+        "capsule": 89.93,
+        "grid": 29.07,
+        "metal_nut": 85.28,
+        "wood": 62.7,
+        "mean": 73.95
+      }
+    },
+    "sota_methods": {
+      "patchcore_wideresnet101": {
+        "method": "PatchCore (WideResNet-101)",
+        "year": 2022,
+        "venue": "CVPR 2022",
+        "image_auroc": {
+          "bottle": 100.0,
+          "cable": 99.5,
+          "capsule": 98.1,
+          "grid": 98.2,
+          "metal_nut": 100.0,
+          "wood": 99.2,
+          "mean": 99.1
+        },
+        "pixel_auroc": {
+          "bottle": 98.6,
+          "cable": 98.4,
+          "capsule": 98.8,
+          "grid": 98.7,
+          "metal_nut": 98.4,
+          "wood": 95.1,
+          "mean": 98.1
+        }
+      },
+      "efficientad": {
+        "method": "EfficientAD (PDN-M)",
+        "year": 2023,
+        "venue": "WACV 2024",
+        "image_auroc": {
+          "bottle": 100.0,
+          "cable": 99.2,
+          "capsule": 98.5,
+          "grid": 99.5,
+          "metal_nut": 99.8,
+          "wood": 99.5,
+          "mean": 99.1
+        },
+        "pixel_auroc": {
+          "bottle": 98.8,
+          "cable": 97.9,
+          "capsule": 98.9,
+          "grid": 97.2,
+          "metal_nut": 97.8,
+          "wood": 95.0,
+          "mean": 97.5
+        }
+      },
+      "simplenet": {
+        "method": "SimpleNet",
+        "year": 2023,
+        "venue": "CVPR 2023",
+        "image_auroc": {
+          "bottle": 100.0,
+          "cable": 99.8,
+          "capsule": 99.0,
+          "grid": 98.7,
+          "metal_nut": 100.0,
+          "wood": 99.8,
+          "mean": 99.6
+        },
+        "pixel_auroc": {
+          "bottle": 98.0,
+          "cable": 98.3,
+          "capsule": 98.6,
+          "grid": 97.7,
+          "metal_nut": 98.3,
+          "wood": 95.0,
+          "mean": 98.1
+        }
+      },
+      "invad_lite": {
+        "method": "InvAD-lite",
+        "year": 2024,
+        "venue": "NeurIPS 2024",
+        "image_auroc": {
+          "bottle": 100.0,
+          "cable": 99.6,
+          "capsule": 99.2,
+          "grid": 99.0,
+          "metal_nut": 100.0,
+          "wood": 99.5,
+          "mean": 99.6
+        },
+        "pixel_auroc": {
+          "bottle": 98.8,
+          "cable": 98.5,
+          "capsule": 99.0,
+          "grid": 98.9,
+          "metal_nut": 98.6,
+          "wood": 95.5,
+          "mean": 98.3
+        }
+      },
+      "patchcore_resnet18_baseline": {
+        "method": "PatchCore (ResNet18, fair comparison baseline)",
+        "year": 2022,
+        "venue": "reference baseline",
+        "image_auroc": {
+          "bottle": 100.0,
+          "cable": 98.4,
+          "capsule": 96.1,
+          "grid": 95.8,
+          "metal_nut": 99.0,
+          "wood": 98.0,
+          "mean": 97.9
+        },
+        "pixel_auroc": {
+          "bottle": 97.8,
+          "cable": 97.2,
+          "capsule": 98.2,
+          "grid": 97.1,
+          "metal_nut": 97.6,
+          "wood": 94.2,
+          "mean": 97.0
+        }
+      }
+    },
+    "delta_vs_sota": {
+      "patchcore_wideresnet101": {
+        "method": "PatchCore (WideResNet-101)",
+        "image_auroc_delta": {
+          "bottle": -17.38,
+          "cable": -38.07,
+          "capsule": -59.97,
+          "grid": -42.56,
+          "metal_nut": -27.27,
+          "wood": -20.34,
+          "mean": -34.2
+        }
+      },
+      "efficientad": {
+        "method": "EfficientAD (PDN-M)",
+        "image_auroc_delta": {
+          "bottle": -17.38,
+          "cable": -37.77,
+          "capsule": -60.37,
+          "grid": -43.86,
+          "metal_nut": -27.07,
+          "wood": -20.64,
+          "mean": -34.2
+        }
+      },
+      "simplenet": {
+        "method": "SimpleNet",
+        "image_auroc_delta": {
+          "bottle": -17.38,
+          "cable": -38.37,
+          "capsule": -60.87,
+          "grid": -43.06,
+          "metal_nut": -27.27,
+          "wood": -20.94,
+          "mean": -34.7
+        }
+      },
+      "invad_lite": {
+        "method": "InvAD-lite",
+        "image_auroc_delta": {
+          "bottle": -17.38,
+          "cable": -38.17,
+          "capsule": -61.07,
+          "grid": -43.36,
+          "metal_nut": -27.27,
+          "wood": -20.64,
+          "mean": -34.7
+        }
+      },
+      "patchcore_resnet18_baseline": {
+        "method": "PatchCore (ResNet18, fair comparison baseline)",
+        "image_auroc_delta": {
+          "bottle": -17.38,
+          "cable": -36.97,
+          "capsule": -57.97,
+          "grid": -40.16,
+          "metal_nut": -26.27,
+          "wood": -19.14,
+          "mean": -33.0
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
-*/target/
-*/project.env
-
+# AI assistant artifacts
+datasets/
+*.png
+.codex
+.claude
+.vscode/
 
 # Rust build output
 target/
 **/target/
-
-# OpenCV / build artifacts
 *.rlib
 *.rmeta
 *.a
@@ -15,26 +16,54 @@ target/
 *.dylib
 *.dll
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
 # Python / NumPy artifacts
 *.npy
 *.npz
 
-# Python cache
-__pycache__/
-*.pyc
-
-# Node/Vite artifacts
+# Node / Vite
 node_modules/
 **/node_modules/
 dist/
 **/dist/
+.vite/
+*.tsbuildinfo
+
+# Env files
+*.env
+project.env
+**/project.env
+.env.local
+.env.*.local
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Rust
-**/target/
-*.rlib
-*.rmeta
-*.a
-'defect detection.md'
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+
+# Archives / large artifacts
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Misc
+defect detection.md
